@@ -13,6 +13,10 @@ class usersController extends Controller
     }
 
     function login(Request $request){
+        $request->validate([
+            'username' => 'required',
+            'password' => 'required'
+        ]);
         return $request->input();
     }
 }

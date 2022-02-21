@@ -8,6 +8,12 @@
 </head>
 <body>
 
+    @if($errors->any())
+
+    @foreach($errors->all() as $error)
+         <h6>{{$error}}</h6>
+    @endforeach
+    @endif
     <form method="POST" action="/login">
         @csrf
         <input type="text" name="username"/>
