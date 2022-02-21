@@ -17,11 +17,13 @@
     {{--}}
     <form method="POST" action="/login">
         @csrf
+        <input type="text" name="username"/>
         <span style="color:red">@error('username'){{$message}}@enderror</span>
-        <input type="text" name="username"/><br/><br/>
-        <span style="color:red">@error('password'){{$message}}@enderror</span>
-
+        <br/><br/>
+        
         <input type="password" name="password"/>
+        <span style="color:red">@error('password'){{$message}}@enderror</span>
+        <br/><br/>
         <input type="submit" value="submit"/>
     </form>
     
