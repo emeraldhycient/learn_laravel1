@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Users;
 use App\Http\Controllers\Learnblade;
+use App\Http\Controllers\UsersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,4 +34,7 @@ Route::get('about/{id}',[Users::class,'about']);
 
 
 Route::get('/learnblade',[Learnblade::class,'learnblade']);
+
+Route::get('/login',[usersController::class,'index']);
+Route::post('/login',[usersController::class,'login']);
 
