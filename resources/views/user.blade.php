@@ -7,16 +7,20 @@
     <title>login</title>
 </head>
 <body>
-
-    @if($errors->any())
+{{--}}   @if($errors->any())
 
     @foreach($errors->all() as $error)
-         <h6>{{$error}}</h6>
+         <li>{{$error}}</li>
     @endforeach
     @endif
+
+    {{--}}
     <form method="POST" action="/login">
         @csrf
-        <input type="text" name="username"/>
+        <span style="color:red">@error('username'){{$message}}@enderror</span>
+        <input type="text" name="username"/><br/><br/>
+        <span style="color:red">@error('password'){{$message}}@enderror</span>
+
         <input type="password" name="password"/>
         <input type="submit" value="submit"/>
     </form>
